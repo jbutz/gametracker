@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Game Play Roles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Game play</th>
+      <th>Game role</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @game_play_roles.each do |game_play_role| %>
+      <tr>
+        <td><%= game_play_role.game_play %></td>
+        <td><%= game_play_role.game_role %></td>
+        <td><%= game_play_role.user %></td>
+        <td><%= link_to 'Show', game_play_role %></td>
+        <td><%= link_to 'Edit', edit_game_play_role_path(game_play_role) %></td>
+        <td><%= link_to 'Destroy', game_play_role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Game play role', new_game_play_role_path %>

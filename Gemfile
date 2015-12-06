@@ -8,15 +8,19 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 group :development, :test do
   gem 'byebug'
+  gem 'pry'
+  gem 'pry-rails'
 end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
 gem 'bootstrap-sass'
+gem "font-awesome-rails"
 gem 'high_voltage'
 gem 'omniauth'
 gem 'omniauth-github'
+gem 'cancancan', '~> 1.10'
 group :development do
   gem 'better_errors'
   gem 'quiet_assets'

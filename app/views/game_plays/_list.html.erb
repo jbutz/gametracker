@@ -1,0 +1,32 @@
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Date</th>
+			<th>Game</th>
+			<th>Winners</th>
+			<th>&nbsp;</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @game_plays.order(:created_at => :desc).each do |game| %>
+		<tr>
+			<td><%= game.day %></td>
+			<td><%= game.game.name %></td>
+			<td><%= game.game_play_roles.where(:won => true).sort_by{|player| player.player_name}.map{|p| p.player_name }.join(", ") %></td>
+			<td class="text-right">
+				<div class="btn-group">
+					<% if can? :read, game %>
+						<%= link_to raw('<span class="fa fa-eye"></span>'), game, :class => "btn btn-default" %>
+					<% end %>
+					<% if can? :update, game %>
+						<%= link_to raw('<span class="fa fa-pencil"></span>'), edit_game_play_path(game), :class => "btn btn-default" %>
+					<% end %>
+					<% if can? :destroy, game %>
+						<%= link_to raw('<span class="fa fa-trash"></span>'), game, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default" %>
+					<% end %>
+				</div>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

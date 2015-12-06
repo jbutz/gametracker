@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+<h3>Games</h3>
+<% if can? :create, GamePlay %>
+<div class="pull-right">
+	<%= link_to raw('<span class="fa fa-plus"></span> Add Game'), new_game_play_path, :class => "btn btn-default" %>
+</div>
+<% end %>
+<%= render 'list' %>

@@ -1,6 +1,7 @@
 // import the CSS framework
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
 // make all images responsive by default
 img {
@@ -15,7 +16,7 @@ img {
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
 // to make views framework-neutral
-.column {
+/*.column {
   @extend .col-md-6;
   @extend .text-center;
   }
@@ -30,7 +31,7 @@ img {
   @extend .btn;
   @extend .btn-primary;
   @extend .btn-lg;
-  }
+  }*/
 // apply styles to HTML elements
 // to make views framework-neutral
 main {

@@ -1,0 +1,24 @@
+<h1><%= @game.name %> Stats</h1>
+
+<script type="text/javascript">
+	(function(){
+		google.load("visualization", "1", {packages:["corechart"]});
+		google.setOnLoadCallback(drawChart);
+		function drawChart() {
+	
+		var data = google.visualization.arrayToDataTable(
+			<%== @player_win_count.to_json %>
+		);
+	
+		var options = {
+			title: 'Win Percentage',
+			backgroundColor: { fill:'transparent' }
+		};
+	
+		var chart = new google.visualization.PieChart(document.getElementById('piechart-wins'));
+	
+		chart.draw(data, options);
+		}
+	}())
+</script>
+<div id="piechart-wins" style="width: 100%; height: 75vh;"></div>

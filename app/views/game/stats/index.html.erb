@@ -1,0 +1,20 @@
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Game</th>
+			<th>&nbsp;</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @games.each do | game | %>
+		<tr>
+			<td><%= game.name %></td>
+			<td>
+				<div class="btn-group">
+					<%= link_to raw('<span class="fa fa-pie-chart"></span>'), '/game/stats/'+game.id.to_s, :class => "btn btn-default" %>
+				</div>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
