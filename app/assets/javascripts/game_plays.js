@@ -61,6 +61,7 @@ $(document).ready(function(){
 			});
 		
 		$playerRole.appendTo($playerRoleList);
+		$playerRole.find(":checkbox").bootstrapToggle();
 		setupPlayerDeleteButtons();
 	});
 	

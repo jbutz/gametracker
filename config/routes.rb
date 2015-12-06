@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   namespace :game do
     get 'stats' => 'stats#index'
     get 'stats/:id' => 'stats#stats'
@@ -14,4 +15,6 @@ Rails.application.routes.draw do
   get '/signin' => 'sessions#new', :as => :signin
   get '/signout' => 'sessions#destroy', :as => :signout
   get '/auth/failure' => 'sessions#failure'
+  
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 end
