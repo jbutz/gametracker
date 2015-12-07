@@ -1,24 +1,51 @@
 <h1><%= @game.name %> Stats</h1>
 
-<script type="text/javascript">
-	(function(){
-		google.load("visualization", "1", {packages:["corechart"]});
-		google.setOnLoadCallback(drawChart);
-		function drawChart() {
-	
-		var data = google.visualization.arrayToDataTable(
-			<%== @player_win_count.to_json %>
-		);
-	
-		var options = {
-			title: 'Win Percentage',
-			backgroundColor: { fill:'transparent' }
-		};
-	
-		var chart = new google.visualization.PieChart(document.getElementById('piechart-wins'));
-	
-		chart.draw(data, options);
-		}
-	}())
-</script>
-<div id="piechart-wins" style="width: 100%; height: 75vh;"></div>
+<h3>Player Totals</h3>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Player</th>
+			<th>Games Played</th>
+			<th>Wins</th>
+			<th>Loses</th>
+			<th>Win Percent</th>
+		</tr>
+	</thead>
+	<tbody class="table-hover">
+		<% @player_stats.each do |stats| %>
+		<tr>
+			<td><%= stats[:player] %></td>
+			<td><%= stats[:total_games] %></td>
+			<td><%= stats[:wins] %></td>
+			<td><%= stats[:loses] %></td>
+			<td><%= stats[:win_percent] %> %</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<h3>Player Totals, by Role</h3>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Player</th>
+			<th>Role</th>
+			<th>Games Played</th>
+			<th>Wins</th>
+			<th>Loses</th>
+			<th>Win Percent</th>
+		</tr>
+	</thead>
+	<tbody class="table-hover">
+		<% @player_stats_roles.each do |stats| %>
+		<tr>
+			<td><%= stats[:player] %></td>
+			<td><%= stats[:role] %></td>
+			<td><%= stats[:total_games] %></td>
+			<td><%= stats[:wins] %></td>
+			<td><%= stats[:loses] %></td>
+			<td><%= stats[:win_percent] %> %</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
