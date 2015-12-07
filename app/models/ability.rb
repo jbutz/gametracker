@@ -35,13 +35,13 @@ class Ability
       can :access, :rails_admin   # grant access to rails_admin
       can :dashboard              # grant access to the dashboard
       can :manage, :all
-    else
-      can :read, :all
+    elsif user.id.blank? == false
       #can :create, GamePlay
       can [:create, :update], GamePlay, :user_id => user.id
       
       can :create, GamePlayRole
     end
+    can :read, :all
     
   end
 end
