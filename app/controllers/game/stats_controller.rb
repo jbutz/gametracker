@@ -20,27 +20,27 @@ class Game::StatsController < ApplicationController
     @player.each do |name,games|
     
       wins = games.select{|g| g.won }.count
-      loses =  games.select{|g| !g.won }.count
+      losses =  games.select{|g| !g.won }.count
       
       @player_stats << {
         :player => name,
         :total_games => games.count,
         :wins => wins,
-        :loses => loses,
+        :losses => losses,
         :win_percent => ((wins.to_f / games.count.to_f) * 100).to_i
       }
       
       games.sort_by{|p| p.game_role.name}.group_by {|player| player.game_role.name }.each do |role, games|
       
         wins = games.select{|g| g.won }.count
-        loses =  games.select{|g| !g.won }.count
+        losses =  games.select{|g| !g.won }.count
       
         @player_stats_roles << {
           :player => name,
           :role => role,
           :total_games => games.count,
           :wins => wins,
-          :loses => loses,
+          :losses => loses,
           :win_percent => ((wins.to_f / games.count.to_f) * 100).to_i
         }
       end
