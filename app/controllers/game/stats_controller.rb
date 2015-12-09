@@ -40,7 +40,7 @@ class Game::StatsController < ApplicationController
           :role => role,
           :total_games => games.count,
           :wins => wins,
-          :losses => loses,
+          :losses => losses,
           :win_percent => ((wins.to_f / games.count.to_f) * 100).to_i
         }
       end
