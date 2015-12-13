@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @win_condition.name %>
+</p>
+
+<p>
+  <strong>Game:</strong>
+  <%= @win_condition.game %>
+</p>
+
+<%= link_to 'Edit', edit_win_condition_path(@win_condition) %> |
+<%= link_to 'Back', win_conditions_path %>

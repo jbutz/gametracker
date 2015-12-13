@@ -1,6 +1,7 @@
 class GamePlay < ActiveRecord::Base
   belongs_to :game
   belongs_to :user
+  belongs_to :win_conditions
   has_many :game_play_roles
   
   accepts_nested_attributes_for :game_play_roles,

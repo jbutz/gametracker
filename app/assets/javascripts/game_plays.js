@@ -70,6 +70,18 @@ $(document).ready(function(){
 			gameRoles = data;
 			$('#player-role-add').prop("disabled", false);
 		});
+		
+		$.getJSON("/win_conditions.json",{game_id: $(this).val()},function(data){
+			if($("#game_play_win_condition_id option").length === 0) {
+				for(var i = 0; i < data.length; i++)
+				{
+					$("#game_play_win_condition_id").append(
+						$("<option>")
+							.attr("value", data[i].id)
+							.text(data[i].name));
+				}
+			}
+		});
 	});
 	
 	if($("#game_play_game_id").val() === "") {

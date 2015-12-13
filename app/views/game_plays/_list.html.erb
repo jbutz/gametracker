@@ -3,6 +3,7 @@
 		<tr>
 			<th>Date</th>
 			<th>Game</th>
+			<th>Win Condition</th>
 			<th>Winners</th>
 			<th>&nbsp;</th>
 		</tr>
@@ -12,6 +13,7 @@
 		<tr>
 			<td><%= game.day %></td>
 			<td><%= game.game.name %></td>
+			<td><%= game.win_condition_id.blank? ? "" : WinCondition.find(game.win_condition_id).name %></td>
 			<td><%= game.game_play_roles.where(:won => true).sort_by{|player| player.player_name}.map{|p| p.player_name }.join(", ") %></td>
 			<td class="text-right">
 				<div class="btn-group">

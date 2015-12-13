@@ -1,0 +1,2 @@
+module WinConditionsHelper
+end

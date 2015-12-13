@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Win Conditions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Game</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @win_conditions.each do |win_condition| %>
+      <tr>
+        <td><%= win_condition.name %></td>
+        <td><%= win_condition.game %></td>
+        <td><%= link_to 'Show', win_condition %></td>
+        <td><%= link_to 'Edit', edit_win_condition_path(win_condition) %></td>
+        <td><%= link_to 'Destroy', win_condition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Win condition', new_win_condition_path %>

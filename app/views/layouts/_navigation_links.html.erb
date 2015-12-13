@@ -1,7 +1,7 @@
 <%# add navigation links to this file %>
 
 <li><%= link_to 'Games', game_plays_path %></li>
-<li><%= link_to 'Stats', game_stats_path %></li>
+<li><%= link_to 'Stats', stats_path %></li>
 
 <% if user_is_admin? %>
   <li><%= link_to 'Game Definitions', games_path %></li>

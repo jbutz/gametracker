@@ -1,0 +1,25 @@
+<%= form_for(@win_condition) do |f| %>
+  <% if @win_condition.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@win_condition.errors.count, "error") %> prohibited this win_condition from being saved:</h2>
+
+      <ul>
+      <% @win_condition.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :game_id %><br>
+    <%= f.text_field :game_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
