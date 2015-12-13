@@ -4,7 +4,10 @@
 
 <div class="row">
   <div class="col-md-5 col-md-offset-1 text-center">
-    <h3><i class="fa  fa-trophy"></i> Winners <i class="fa  fa-trophy"></i></h3>
+    <h3>
+      <i class="fa  fa-trophy"></i> Winners <i class="fa  fa-trophy"></i><br />
+      <small><%== @game_play.win_condition_id.blank? ? "&nbsp;" : WinCondition.find(@game_play.win_condition_id).name %></small>
+    </h3>
     <table class="table">
       <% @game_play.game_play_roles.where(:won => true).sort_by{|player| player.player_name}.each do |player| %>
         <tr>
@@ -15,7 +18,7 @@
     </table>
   </div>
   <div class="col-md-5 text-center">
-    <h3><i class="fa fa-frown-o"></i> Losers <i class="fa fa-frown-o"></i></h3>
+    <h3><i class="fa fa-frown-o"></i> Losers <i class="fa fa-frown-o"></i><br />&nbsp;</h3>
     <table class="table">
       <% @game_play.game_play_roles.where(:won => false).sort_by{|player| player.player_name}.each do |player| %>
         <tr>

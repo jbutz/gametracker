@@ -1,8 +1,8 @@
-class Game::StatsController < ApplicationController
+class StatsController < ApplicationController
   def index
     @games = Game.all
   end
-  
+
   def stats
     @game = Game.find(params[:id])
     @games = @game.game_plays
