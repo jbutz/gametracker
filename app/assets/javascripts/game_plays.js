@@ -72,7 +72,7 @@ $(document).ready(function(){
 		});
 		
 		$.getJSON("/win_conditions.json",{game_id: $(this).val()},function(data){
-			if($("#game_play_win_condition_id option").length === 0) {
+			if($("#game_play_win_condition_id option").length <= 1) {
 				for(var i = 0; i < data.length; i++)
 				{
 					$("#game_play_win_condition_id").append(
