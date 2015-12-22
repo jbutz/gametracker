@@ -1,0 +1,1 @@
+require "npm_railtie/railtie" if defined(Rails)

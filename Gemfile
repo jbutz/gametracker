@@ -21,6 +21,9 @@ gem 'high_voltage'
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'cancancan', '~> 1.10'
+gem "sprockets"
+gem "sprockets-es6"
+gem "bower-rails", "~> 0.10.0"
 group :development do
   gem 'better_errors'
   gem 'quiet_assets'
@@ -38,3 +41,7 @@ end
 
 gem "rails_admin"
 gem "rake"
+gem 'js_assets'
+gem 'typescript-rails'
+
+#gem "browserify-rails"
