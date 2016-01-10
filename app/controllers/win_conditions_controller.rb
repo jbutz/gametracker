@@ -4,7 +4,7 @@ class WinConditionsController < ApplicationController
   # GET /win_conditions
   # GET /win_conditions.json
   def index
-    @win_conditions = WinCondition.all
+    @win_conditions = params[:game_id].present? ? Game.find(params[:game_id]).win_conditions.all : WinCondition.all
   end
 
   # GET /win_conditions/1
