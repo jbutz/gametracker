@@ -31,8 +31,11 @@ $(document).ready(function(){
                                 .attr("id",uniqueId))
                         .append($("<span>")
                                 .addClass("input-group-btn")
-                                .append($("<button>").addClass("btn btn-danger").attr("type","button")
-                                        .append($("<span>").addClass("glyphicon glyphicon-remove"))))
+                                .append($("<button>").addClass("btn btn-danger").attr({
+                                    "type":"button",
+                                    "data-action":"delete"
+                                })
+                                    .append($("<span>").addClass("glyphicon glyphicon-remove"))))
                         .append($("<input>")
                                         .attr({
                                                 "type": "hidden",
@@ -55,7 +58,10 @@ $(document).ready(function(){
                                 .attr("id",uniqueId))
                         .append($("<span>")
                                 .addClass("input-group-btn")
-                                .append($("<button>").addClass("btn btn-danger").attr("type","button")
+                                .append($("<button>").addClass("btn btn-danger").attr({
+                                    "type":"button",
+                                    "data-action": "delete"
+                                })
                                         .append($("<span>").addClass("glyphicon glyphicon-remove"))))
                         .append($("<input>")
                                         .attr({
