@@ -13,5 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require system.js.js
+//= require angular-es6/bundles/angular2
 //= require_tree .
 //= require bootstrap-toggle

@@ -1,0 +1,4 @@
+{
+  "plugins": ["syntax-decorators","transform-es2015-modules-systemjs"],
+  "modules": "system"
+}

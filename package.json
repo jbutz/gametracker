@@ -1,0 +1,21 @@
+{
+  "name": "gametracker",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "babel-plugin-syntax-decorators": "^6.3.13",
+    "babel-plugin-transform-decorators": "^6.4.0",
+    "babel-plugin-transform-es2015-modules-systemjs": "^6.4.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbutz/gametracker.git"
+  },
+  "author": "Jason Butz",
+  "bugs": {
+    "url": "https://github.com/jbutz/gametracker/issues"
+  },
+  "homepage": "https://github.com/jbutz/gametracker#readme",
+  "private": true
+}
